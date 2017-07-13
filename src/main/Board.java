@@ -39,23 +39,23 @@ public class Board {
         return layout;
     }
     
-    private <T extends Pane> void setButtonFunction(T scheme){
-        ObservableList<Node> buttonList = scheme.getChildren();
+    private <T extends Pane> void setButtonFunction(T board){
+        ObservableList<Node> buttonList = board.getChildren();
         Iterator iterator = buttonList.iterator();
         while(iterator.hasNext()){
             Button button = (Button)iterator.next();
             button.setMinSize(50, 50);
             button.setOnAction(e -> {
-                button.setText(mechanics.currentPlayer);
+                button.setText(mechanics.getCurrentPlayer().name());
                 button.setMouseTransparent(true);
-                checkBoard(scheme);
+                checkBoard(board);
                 mechanics.switchCurrentPlayer();
             });
         }
         
     }
     
-    public <T extends Pane> void checkBoard(T scheme){        
+    private <T extends Pane> void checkBoard(T scheme){        
         ObservableList<Node> buttonList = scheme.getChildren();
         Button[] boardState = buttonList.toArray(new Button[9]);
         //Checking horizontal win

@@ -5,35 +5,36 @@ package main;
 
 public class Mechanics {
     
-    final String player1;               //names of the players
-    final String player2;
-    String currentPlayer;
-    public enum Turn{"X", "O"};
-    Turn currentTurn;
+    final String p1name;               //names of the players
+    final String p2name;
+    public enum Player{X, O};
+    Player currentPlayer ;
     
     Mechanics(){
-        player1 = "P1" ; 
-        player2 = "P2";      
-        currentTurn = (Turn)"X";       //player1 goes first by default
+        p1name = "P1" ; 
+        p2name = "P2";      
+        currentPlayer = Player.X;       //X goes first by default
   
     }
         
     public void switchCurrentPlayer(){
-        if(currentPlayer.equals(player1)){
-            currentPlayer = player2;
+        if(currentPlayer == Player.X){
+            currentPlayer = Player.O;
         }
         else{
-            currentPlayer = player1;
+            currentPlayer = Player.X;
         }
     
     }
     
     //Returns an array of the two players;
+    /*
     public void getPlayers(){
         return player1;
+    }*/
+    
+    public Player getCurrentPlayer(){
+        return currentPlayer;
     }
-       
-    public String getTurn(){
-        return 
-    }
+    
 }
