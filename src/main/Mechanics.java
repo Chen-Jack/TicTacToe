@@ -4,34 +4,28 @@ package main;
 //track of the score board.
 
 public class Mechanics {
-    
-    final String p1name;               //names of the players
-    final String p2name;
-    public enum Player{X, O};
+    Player p1;
+    Player p2;
     Player currentPlayer ;
     
     Mechanics(){
-        p1name = "P1" ; 
-        p2name = "P2";      
-        currentPlayer = Player.X;       //X goes first by default
-  
+        p1 = new Player();
+        p2 = new Player();
+        p1.symbol = 'X';
+        p2.symbol = 'O';
+        currentPlayer = p1;       //X goes first by default
     }
         
     public void switchCurrentPlayer(){
-        if(currentPlayer == Player.X){
-            currentPlayer = Player.O;
+        if(currentPlayer == p1){
+            currentPlayer = p2;
         }
         else{
-            currentPlayer = Player.X;
+            currentPlayer = p1;
         }
     
     }
     
-    //Returns an array of the two players;
-    /*
-    public void getPlayers(){
-        return player1;
-    }*/
     
     public Player getCurrentPlayer(){
         return currentPlayer;

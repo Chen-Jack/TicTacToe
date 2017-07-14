@@ -73,8 +73,7 @@ public class Board {
             if(buttonArray[i].getText().equals(player)){
                 if(buttonArray[i+3].getText().equals(player)){
                     if(buttonArray[i+6].getText().equals(player)){
-                        System.out.println(player + " Won!");
-                        
+                        VictoryWindow.display(player);                       
                     }
                 }
             }
@@ -86,7 +85,7 @@ public class Board {
             if(buttonArray[i].getText().equals(player)){
                 if(buttonArray[i+1].getText().equals(player)){
                     if(buttonArray[i+2].getText().equals(player)){
-                        System.out.println(player + " Won!"); 
+                        VictoryWindow.display(player);  
                     }
                 }
             }
@@ -97,7 +96,7 @@ public class Board {
         if(buttonArray[0].getText().equals(player)){
             if(buttonArray[4].getText().equals(player)){
                 if(buttonArray[8].getText().equals(player)){
-                    System.out.println(player + " Won!");
+                    VictoryWindow.display(player); 
                 }
             }
                 
@@ -105,7 +104,7 @@ public class Board {
         if(buttonArray[6].getText().equals(player)){
             if(buttonArray[4].getText().equals(player)){
                 if(buttonArray[2].getText().equals(player)){
-                    System.out.println(player + " Won!");
+                    VictoryWindow.display(player); 
                 }
             }
         }
