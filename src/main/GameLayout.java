@@ -16,13 +16,13 @@ public class GameLayout {
         
         scoreboard.add(new Label("Player 1"), 0, 0);
         scoreboard.add(new Label("Player 2"), 1, 0);
-        scoreboard.add(new Label("0"), 0, 1);
+        scoreboard.add(new Label("3"), 0, 1);
         scoreboard.add(new Label("0"), 1, 1);
         
-        
+        GridPane gameBoard = new Board().getBoardLayout();
         
         layout.getChildren().add(scoreboard);
-        layout.getChildren().add(new Board().createBoard());
+        layout.getChildren().add(gameBoard);
         
         return layout;
     }
