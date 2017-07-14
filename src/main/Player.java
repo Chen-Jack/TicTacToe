@@ -5,5 +5,13 @@ package main;
 public class Player {
     String name;
     int score;
-    char symbol;
+    String symbol;              //This needs to be a string and not a char
+                                //because the button press sets the icon to the
+                                //player's symbol.which doesnt work if its  a char.
+    
+    Player(String name, String symbol){
+        this.name = name;
+        score = 0;
+        this.symbol = symbol;
+    }
 }

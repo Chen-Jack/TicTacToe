@@ -12,16 +12,18 @@ import javafx.stage.*;
 //class for displaying the end game screen. Either to reset or close the game.
 
 public class VictoryWindow{
-    public static void display(String winningPlayer){
+    public static void display(Player winningPlayer){
         Stage stage = new Stage();
+        stage.setTitle("Game Over");
+        stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
         
         VBox layout = new VBox();
         
 
-        Label label = new Label (winningPlayer + " WON!");
+        Label label = new Label (winningPlayer.name + " won!");
         label.setPadding(new Insets(10,10,10,10));
-        label.setFont(new Font(winningPlayer, 16));
+        label.setFont(new Font(16));
         
         
         HBox choices = new HBox();

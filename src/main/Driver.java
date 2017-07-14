@@ -3,7 +3,6 @@ package main;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 
@@ -18,10 +17,9 @@ public class Driver extends Application{
     @Override
     public void start(Stage primaryStage){
         primaryStage.setTitle("Tic-Tac-Toe");
+       
         
-        GridPane layout = new Board().createBoard();
-        Scene scene = new Scene(layout);
-
+        Scene scene = new Scene(new GameLayout().createGameLayout());
         primaryStage.setScene(scene);
         primaryStage.show();
         
