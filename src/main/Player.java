@@ -10,7 +10,12 @@ public class Player {
     
     Player(String name, String symbol){
         this.name = name;
-        score = 0;
+        this.score = 0;
         this.symbol = symbol;
     }
+    
+    Player(String name){
+        this.name = name;
+    }
+    
 }

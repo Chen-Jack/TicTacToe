@@ -6,7 +6,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 public class GameLayout {
-    public VBox createGameLayout(){
+    public static VBox initGameLayout(){
+             
         VBox layout = new VBox();
         
         GridPane scoreboard = new GridPane();
@@ -19,7 +20,7 @@ public class GameLayout {
         scoreboard.add(new Label("3"), 0, 1);
         scoreboard.add(new Label("0"), 1, 1);
         
-        GridPane gameBoard = new Board().getBoardLayout();
+        GridPane gameBoard = Board.getBoard();
         
         layout.getChildren().add(scoreboard);
         layout.getChildren().add(gameBoard);

@@ -12,13 +12,10 @@ import javafx.scene.layout.Pane;
 
 
 public class Board {
-    private final Operation gameOp;
-    private final GridPane layout;
+    private static GridPane layout;
     
-    public Board(){      
-        gameOp = new Operation();     
-        layout = new GridPane(); 
-        
+    public static void initBoard(){     
+        layout = new GridPane();
         layout.setPadding(new Insets(10,10,10,10));
         layout.setVgap(10);
         layout.setHgap(10);
@@ -36,20 +33,39 @@ public class Board {
             buffer.setMinSize(50, 50);
         }
         
-        gameOp.setButtonFunction(layout);
+        setButtonFunction();
         
     }
     
+    public static void setButtonFunction(){
+        ObservableList<Node> buttonList = layout.getChildren();
+        
+        Iterator iterator = buttonList.iterator();
+        while(iterator.hasNext()){
+            Button button = (Button)iterator.next();
+            button.setMinSize(50, 50);
+            button.setOnAction(e -> {
+                button.setText(Operation.getCurrentPlayer().symbol);
+                button.setMouseTransparent(true);
+        
+                Operation.incrementTurn();
+                
+                WinCondition.check(layout, Operation.getPlayer1());
+                WinCondition.check(layout, Operation.getPlayer2());
+                Operation.switchCurrentPlayer();
+
+               
+            });
+        }
+    }
+    
  
-    public GridPane getBoardLayout(){
+    public static GridPane getBoard(){
         return layout;
     }
     
-    public Operation getBoardOperation(){
-        return gameOp;
-    }
     
-    public static <GridPane extends Pane> void clearBoard(GridPane layout){
+    public static  void clearBoard(){
         ObservableList<Node> buttonList = layout.getChildren();
         Iterator iterator = buttonList.iterator();
         while(iterator.hasNext()){

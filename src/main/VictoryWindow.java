@@ -1,5 +1,6 @@
 package main;
 
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,7 +15,7 @@ import javafx.stage.*;
 //class for displaying the end game screen. Either to reset or close the game.
 
 public class VictoryWindow{
-    public static <GridPane extends Pane> void display(GridPane board, Player winningPlayer){
+    public static  void display(Player winningPlayer){
         Stage stage = new Stage();
         stage.setTitle("Game Over");
         stage.setResizable(false);
@@ -34,7 +35,8 @@ public class VictoryWindow{
         
         Button newGameButton = new Button("New Game");
         newGameButton.setOnAction((event) -> {
-            Board.clearBoard(board);
+            Operation.resetTurn();
+            Board.clearBoard();
             stage.close();
         });
         choices.getChildren().add(0, newGameButton);
@@ -43,7 +45,7 @@ public class VictoryWindow{
         
         Button closeGameButton = new Button ("Close Game");
         closeGameButton.setOnAction((event) -> {
-            //
+            Platform.exit();
         });
         choices.getChildren().add(1, closeGameButton);
         
