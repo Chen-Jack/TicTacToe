@@ -8,12 +8,12 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 
 
 public class Board {
     private static GridPane layout;
     
+    //Initializes the asthetics of the board and the button function
     public static void initBoard(){     
         layout = new GridPane();
         layout.setPadding(new Insets(10,10,10,10));
@@ -37,7 +37,7 @@ public class Board {
         
     }
     
-    public static void setButtonFunction(){
+    private static void setButtonFunction(){
         ObservableList<Node> buttonList = layout.getChildren();
         
         Iterator iterator = buttonList.iterator();
@@ -50,11 +50,11 @@ public class Board {
         
                 Operation.incrementTurn();
                 
-                WinCondition.check(layout, Operation.getPlayer1());
-                WinCondition.check(layout, Operation.getPlayer2());
-                Operation.switchCurrentPlayer();
-
-               
+                //The following method checks the board to see if 
+                //Player1 or Player2 won on each button press.
+                WinCondition.check(layout, Operation.getPlayer1(), 
+                        Operation.getPlayer2());
+                Operation.switchCurrentPlayer();           
             });
         }
     }
@@ -65,7 +65,7 @@ public class Board {
     }
     
     
-    public static  void clearBoard(){
+    public static void clearBoard(){
         ObservableList<Node> buttonList = layout.getChildren();
         Iterator iterator = buttonList.iterator();
         while(iterator.hasNext()){

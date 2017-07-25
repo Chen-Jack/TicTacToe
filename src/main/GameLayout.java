@@ -6,6 +6,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 public class GameLayout {
+    //Requires that boardInit be already called beforehand.
     public static VBox initGameLayout(){
              
         VBox layout = new VBox();
