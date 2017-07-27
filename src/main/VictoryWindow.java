@@ -21,6 +21,15 @@ public class VictoryWindow{
         stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
         
+        /*
+        if(winningPlayer == Operation.getPlayer1()){
+            Scoreboard.updateP1Score();
+        }
+        else if(winningPlayer == Operation.getPlayer2()){
+            Scoreboard.updateP2Score();
+        }*/
+        
+        
         VBox layout = new VBox();
         
         //Top half of window (Just a label)

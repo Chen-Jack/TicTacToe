@@ -18,7 +18,7 @@ public class Driver extends Application{
     public void start(Stage primaryStage){
         primaryStage.setTitle("Tic-Tac-Toe");
        
-        Game.initGame();
+        Game.initGame();    //Start the game
         
         Scene scene = new Scene(Game.getGameLayout());
         primaryStage.setScene(scene);

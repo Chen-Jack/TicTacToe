@@ -13,13 +13,13 @@ public class WinCondition {
         if(checkHorizontalWin(board, player1)||
             checkVerticalWin(board, player1)||
             checkDiagonalWin(board, player1)){
-                player1.score += 1;
+                player1.score = player1.score + 1;
                 VictoryWindow.display(player1);
             }
         else if(checkHorizontalWin(board, player2)||
             checkVerticalWin(board, player2)||
             checkDiagonalWin(board, player2)){
-                player2.score += 1;
+                player2.score = player1.score + 1;
                 VictoryWindow.display(player2);
             }
         else if(checkTie()){

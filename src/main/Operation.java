@@ -11,8 +11,8 @@ public class Operation{
     private static Integer turn;
     
     public static void initOperation(){
-        p1 = new Player("Jack", "X");
-        p2 = new Player("Ana", "O");
+        p1 = new Player();   
+        p2 = new Player();
         p1.symbol = "X";
         p2.symbol = "O";
         currentPlayer = p1;       //X goes first by default
@@ -50,5 +50,13 @@ public class Operation{
     
     public static void resetTurn(){
         turn = 0;
+    }
+    
+    public static void setP1Name(String name){
+        p1.name = name;
+    }
+    
+    public static void setP2Name(String name){
+        p2.name = name;
     }
 }

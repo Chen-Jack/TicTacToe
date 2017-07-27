@@ -3,10 +3,13 @@ package main;
 //Player struct that contains each players attributes
 
 public class Player {
-    public String name;
-    int score;
-    String symbol;              
-    boolean currentPlayer;
+    public String name;         //I should make this private, but im lazy
+    public Integer score;
+    public String symbol;              
+    
+    Player(){
+        this.score = 0;
+    }
     
     Player(String name, String symbol){
         this.name = name;
