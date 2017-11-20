@@ -1,4 +1,4 @@
 # TicTacToe
 First attempt at a GUI program 
 
-I have no idea what I'm doing
+It's a basic tic-tac-toe game build with JavaFX.
