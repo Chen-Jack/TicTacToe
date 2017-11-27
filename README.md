@@ -10,9 +10,9 @@ It's a basic tic-tac-toe game build with JavaFX.
 ***
 
 # Quality game play\!
-![Demo Pic](https://github.com/Chen-Jack/TicTacToe/blob/master/2.png)
+![Demo Pic](https://github.com/Chen-Jack/TicTacToe/blob/master/3.png)
 
 ***
 
 # Great match! Wow!
-![Demo Pic](https://github.com/Chen-Jack/TicTacToe/blob/master/3.png)
+![Demo Pic](https://github.com/Chen-Jack/TicTacToe/blob/master/2.png)
